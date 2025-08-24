@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDFConverter Privacy Policy</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            transform: translateY(20px);
+            animation: slideInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes slideInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><circle cx="10" cy="10" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="25" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="50" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="45" cy="45" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: drift 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes drift {
+            0% { transform: rotate(0deg) translate(-20px, -20px); }
+            100% { transform: rotate(360deg) translate(-20px, -20px); }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 3rem 2rem;
+        }
+
+        .meta-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+        }
+
+        .meta-value {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .intro {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out forwards;
+            animation-delay: var(--delay, 0s);
+        }
+
+        .section:nth-child(3) { --delay: 0.1s; }
+        .section:nth-child(4) { --delay: 0.2s; }
+        .section:nth-child(5) { --delay: 0.3s; }
+        .section:nth-child(6) { --delay: 0.4s; }
+        .section:nth-child(7) { --delay: 0.5s; }
+        .section:nth-child(8) { --delay: 0.6s; }
+        .section:nth-child(9) { --delay: 0.7s; }
+        .section:nth-child(10) { --delay: 0.8s; }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-number {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .section ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .section li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .section li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.2) 100%);
+            color: var(--text-dark);
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .important-note {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 1px solid #f59e0b;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-weight: 600;
+            color: #92400e;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .contact-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 2rem 1.5rem;
+            }
+
+            .meta-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1>PDFConverter</h1>
+            <p>Privacy Policy & Data Protection</p>
+        </header>
+
+        <main class="content">
+            <div class="meta-info">
+                <div class="meta-item">
+                    <div class="meta-label">Last Updated</div>
+                    <div class="meta-value">August 24, 2025</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Effective Date</div>
+                    <div class="meta-value">August 24, 2025</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Version</div>
+                    <div class="meta-value">1.0</div>
+                </div>
+            </div>
+
+            <div class="intro">
+                This Privacy Policy describes how <span class="highlight">PDFConverter</span> ("we", "our", or "us") collects, uses, and shares information when you use our application. We are committed to protecting your privacy and being transparent about our data practices.
+            </div>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">1</div>
+                    <h2>Information We Collect</h2>
+                </div>
+                <p>PDFConverter does not require user registration and does not collect personally identifiable information such as names, email addresses, or phone numbers.</p>
+                <p>We may collect the following anonymous information:</p>
+                <ul>
+                    <li><strong>Usage Data:</strong> Information about how you interact with the app, including features used and time spent.</li>
+                    <li><strong>Device Information:</strong> Non-personal device data such as device type, operating system version, and language settings.</li>
+                    <li><strong>Advertising Data:</strong> For ad-supported services, we may collect data to serve personalized ads (this can be disabled in device settings).</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">2</div>
+                    <h2>How We Use Information</h2>
+                </div>
+                <p>We use the collected information to:</p>
+                <ul>
+                    <li>Provide and maintain our service</li>
+                    <li>Improve app functionality and user experience</li>
+                    <li>Display relevant advertisements</li>
+                    <li>Analyze app performance and usage patterns</li>
+                    <li>Offer optional in-app purchases and subscriptions</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">3</div>
+                    <h2>Data Sharing</h2>
+                </div>
+                <p>We may share anonymous data with:</p>
+                <ul>
+                    <li>Advertising partners to serve relevant ads</li>
+                    <li>Analytics providers to understand app usage</li>
+                    <li>Service providers who assist in app operations</li>
+                </ul>
+                <div class="important-note">
+                    <strong>Important:</strong> No personally identifiable information is shared with third parties.
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">4</div>
+                    <h2>Children's Privacy</h2>
+                </div>
+                <p>PDFConverter is safe for users aged 12 and above. We do not knowingly collect personal information from children under 12.</p>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">5</div>
+                    <h2>Security</h2>
+                </div>
+                <p>We implement reasonable security measures to protect the limited data we collect. Our security practices include encryption of data in transit and secure storage of anonymous usage data.</p>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">6</div>
+                    <h2>Changes to This Policy</h2>
+                </div>
+                <p>We may update this Privacy Policy periodically. We will notify users of significant changes through app updates and by updating the "Last Updated" date at the top of this policy.</p>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">7</div>
+                    <h2>Your Choices</h2>
+                </div>
+                <p>You have control over your data and can:</p>
+                <ul>
+                    <li>Disable ad tracking in your device settings</li>
+                    <li>Opt out of personalized ads through your device preferences</li>
+                    <li>Contact us with privacy-related questions</li>
+                    <li>Request information about the data we collect</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">8</div>
+                    <h2>Contact Us</h2>
+                </div>
+                <p>If you have questions about this Privacy Policy or need support, we're here to help:</p>
+                
+                <div class="contact-section">
+                    <h3>Get in Touch</h3>
+                    <p>For privacy-related questions, support, or feedback</p>
+                    <a href="mailto:abubakar@yahoo.com" class="contact-link">
+                        📧 abubakar@yahoo.com
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>© 2025 PDFConverter. All rights reserved. | Committed to protecting your privacy.</p>
+        </footer>
+    </div>
+</body>
+</html>
